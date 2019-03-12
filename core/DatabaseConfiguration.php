@@ -18,22 +18,15 @@ namespace App\Core;
            }
            public function getSourceString(){
                return "mysql:host={$this->host};dbname={$this->name};charset=utf8";
-
            }
-
-
            public function getUser(): string
            {
                return $this->user;
            }
-
-
            public function getPass(): string
            {
                return $this->pass;
            }
-
-
            }
 
 

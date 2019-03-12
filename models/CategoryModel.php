@@ -17,10 +17,10 @@ private  $dbc;
    public function getById( int  $categoryId){
       $sql = 'SELECT * FROM category WHERE category_id =?;';
       $prep = $this->dbc->getConnection()->prepare($sql);
-      $res = $prep->execute([categoryId]);
+      $res = $prep->execute([$categoryId]);
       $category = null;
       if($res){
-      $category = $prep->fetch(PDO::FETCH_OBJ);
+      $category = $prep->fetch(\PDO::FETCH_OBJ);
       }
       return $category;
    }
@@ -29,11 +29,11 @@ private  $dbc;
         $sql = 'SELECT * FROM category;';
          $prep = $this->dbc->getConnection()->prepare($sql);
          $res = $prep->execute();
-         $categorys = [];
+         $categories = [];
          if($res){
-             $categorys= $prep->fetchAll(\PDO::FETCH_OBJ);
+             $categories= $prep->fetchAll(\PDO::FETCH_OBJ);
          }
-         return $categorys;
+         return $categories;
      }
 
     }
